@@ -1,0 +1,27 @@
+// url = http://unicode.org/emoji/charts/full-emoji-list.html
+function fetch(){
+	var ret = [];
+	var trs = document.querySelectorAll('table tr');
+	trs.forEach( (tr)=>{
+		let tds = tr.querySelectorAll('td');
+		if( tds.length == 0 ) return true;
+		let code =  tds[1].querySelectorAll('a')[0].getAttribute('name');
+		let char = tds[2].innerHTML;
+		let a = document.createElement('a');
+		a.setAttribute('download', code);
+		a.setAttribute('href', tds[6].querySelectorAll('img')[0].getAttribute('src') );
+		a.click();
+		let name = tds[16].innerHTML;
+		ret.push({
+			name: name,
+			code: code,
+			char: char
+		});
+	});
+	var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(ret));
+	let a = document.createElement('a');
+	a.setAttribute('download', 'emojies.json');
+	a.setAttribute('href', dataStr );
+	a.click();
+}
+fetch();

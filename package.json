@@ -1,0 +1,50 @@
+{
+  "name": "nemojy",
+  "title": "Nemojy",
+  "productName": "Nemojy",
+  "description": "A minimal app to browsing and using emojies!",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/grunt start",
+    "build": "./node_modules/.bin/grunt build",
+    "fetch": "./node_modules/.bin/grunt fetch",
+    "clean": "./node_modules/.bin/grunt clean"
+  },
+  "build": {
+    "asar": false,
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "iconUrl": "https://github.com/favicon.ico",
+      "msi": true
+    },
+    "linux": {
+      "target": "deb",
+      "executable": "Nemojy"
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "5.0.0",
+    "electron-prebuilt": "1.2.6",
+    "grunt": "~0.4.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-exec": "^1.0.0",
+    "grunt-wget": "~0.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nainemom/nemojy.git"
+  },
+  "keywords": [
+    "nemojy",
+    "emoji"
+  ],
+  "author": "nainemom <nainemom@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nainemom/nemojy/issues"
+  },
+  "homepage": "https://github.com/nainemom/nemojy#readme"
+}
